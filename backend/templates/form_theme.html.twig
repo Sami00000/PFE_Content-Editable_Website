@@ -1,0 +1,27 @@
+{% block form_row %}
+    <div class="form-group">
+        {{ form_label(form) }}
+        <div class="form-field">
+            {{ form_widget(form, { 'attr': { 'class': 'form-control' } }) }}
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block form_label %}
+    {% if label is not same as(false) %}
+        <label class="form-label" {% if id is not empty %}for="{{ id }}"{% endif %}>{{ label|trans }}</label>
+    {% endif %}
+{% endblock %}
+
+{% block date_widget %}
+    {% if widget == 'single_text' %}
+        {{ block('form_widget_simple') }}
+    {% else %}
+        <div class="date-widget">
+            {{- form_widget(form.day, { 'attr': { 'class': 'form-control date-part' } }) -}}
+            {{- form_widget(form.month, { 'attr': { 'class': 'form-control date-part' } }) -}}
+            {{- form_widget(form.year, { 'attr': { 'class': 'form-control date-part' } }) -}}
+        </div>
+    {% endif %}
+{% endblock %}

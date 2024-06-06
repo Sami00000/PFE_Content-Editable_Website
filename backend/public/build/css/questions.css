@@ -1,0 +1,167 @@
+.copy-icon {
+    color: rgb(145, 143, 143);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(145, 143, 143);
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    background-color: #fff;
+}
+
+.question-container {
+    width: 900px;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #ececec;
+}
+
+.firstandlastname {
+    display: flex;
+    margin-left: 35px;
+    margin-top: 15px;
+}
+
+.firstname, .lastname {
+    width: 50%;
+}
+
+.firstname > span, .lastname > span, .email > span, .question-text > span {
+    font-size: 20px;
+    color: rgb(116, 111, 111);
+}
+
+.firstname > div, .lastname > div, .email > div, .question-text > div {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.firstname > div > p, .lastname > div > p, .email > div > p, .question-text > div > p {
+    border: .5px solid grey;
+    border-radius: 7px;
+    font-size: 22px;
+    width: 70%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+.email, .question-text {
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+.email > div > p, .question-text > div > p {
+    border: .5px solid grey;
+    border-radius: 7px;
+    font-size: 22px;
+    width: 85%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+.question-text {
+    margin-bottom: 30px;
+}
+
+.question-actions {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.question-actions > div {
+    display: flex;
+    justify-content: space-around;
+    width: 240px;
+}
+
+.delete_question, .add2frequent, .reply_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+
+.delete_question, .reply_btn {
+    width: 90px;
+}
+
+.add2frequent {
+    width: 120px;
+    background-color: #FFC100;
+}
+
+.delete_question {
+    background-color: red;
+}
+
+.reply_btn {
+    background-color: #279EFF;
+    margin-right: 20px;
+}
+
+.respond-form > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit_respond {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 250px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+#respond_text {
+    padding: 15px;
+    font-size: 20px;
+    width: 800px;
+    min-height: 200px;
+}
+
+.submit_respond > button, .submit_respond > span {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+}
+
+.submit_respond > button[type="submit"] {
+    background-color: #279EFF;
+}
+
+.cancel_reply {
+    background-color: red;
+}
+
+.hidden {
+    display: none;
+}

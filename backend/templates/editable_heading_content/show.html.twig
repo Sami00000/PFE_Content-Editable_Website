@@ -1,0 +1,46 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}EditableHeadingContent{% endblock %}
+
+{% block body %}
+    <h1>EditableHeadingContent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ editable_heading_content.id }}</td>
+            </tr>
+            <tr>
+                <th>TextContent</th>
+                <td>{{ editable_heading_content.textContent }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                <td>{{ editable_heading_content.tag }}</td>
+            </tr>
+            <tr>
+                <th>Page</th>
+                <td>{{ editable_heading_content.page }}</td>
+            </tr>
+            <tr>
+                <th>HeaderLevel</th>
+                <td>{{ editable_heading_content.headerLevel }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ editable_heading_content.createdAt ? editable_heading_content.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ editable_heading_content.updatedAt ? editable_heading_content.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="button" href="{{ path('app_editable_heading_content_index') }}">back to list</a>
+
+    <a class="button" href="{{ path('app_editable_heading_content_edit', {'id': editable_heading_content.id}) }}">edit</a>
+
+    {{ include('editable_heading_content/_delete_form.html.twig') }}
+{% endblock %}

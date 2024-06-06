@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('app_editable_heading_content_delete', {'id': editable_heading_content.id}) }}" onsubmit="event.preventDefault(); if (confirm('Are you sure you want to delete this item?')) { this.submit(); }">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ editable_heading_content.id) }}">
+    <button class="btn">Delete</button>
+</form>

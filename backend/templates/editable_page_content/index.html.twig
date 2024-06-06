@@ -1,0 +1,103 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}Editable Page Content{% endblock %}
+
+{% block body %}
+<h1>Editable Page Content</h1>
+
+<form method="get" action="{{ path('editable_page_content') }}">
+    <label for="page">Select Page:</label>
+    <select name="page" id="page" onchange="this.form.submit()">
+        <option value="">-- Select a Page --</option>
+        {% for page in distinctPages %}
+            <option value="{{ page.page }}" {% if page.page == selectedPage %}selected{% endif %}>{{ page.page }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+{% if selectedPage %}
+    <h2>Content for Page: {{ selectedPage }}</h2>
+
+    <h3>Headings</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Text Content</th>
+                <th>Tag</th>
+                <th>Header Level</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for heading in headings %}
+                <tr>
+                    <td>{{ heading.id }}</td>
+                    <td>{{ heading.textContent }}</td>
+                    <td>{{ heading.tag }}</td>
+                    <td>{{ heading.headerLevel }}</td>
+                    <td>
+                        <a class="button" href="{{ path('app_editable_heading_content_show', {'id': heading.id}) }}">show</a>
+                        <a class="button" href="{{ path('app_editable_heading_content_edit', {'id': heading.id}) }}">edit</a>
+                        {{ include('editable_heading_content/_delete_form.html.twig', {'editable_heading_content': heading}) }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Images</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Tag</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for image in images %}
+                <tr>
+                    <td>{{ image.id }}</td>
+                    <td><img src="{{ image.srcContent }}" alt="{{ image.tag }}" width="100"></td>
+                    <td>{{ image.tag }}</td>
+                    <td>
+                        <a class="button" href="{{ path('app_editable_image_content_show', {'id': image.id}) }}">show</a>
+                        <a class="button" href="{{ path('app_editable_image_content_edit', {'id': image.id}) }}">edit</a>
+                        {{ include('editable_image_content/_delete_form.html.twig', {'editable_image_content': image}) }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Text Content</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Text Content</th>
+                <th>Tag</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for text in texts %}
+                <tr>
+                    <td>{{ text.id }}</td>
+                    <td>{{ text.textContent }}</td>
+                    <td>{{ text.tag }}</td>
+                    <td>
+                        <a class="button" href="{{ path('app_editable_text_content_show', {'id': text.id}) }}">show</a>
+                        <a class="button" href="{{ path('app_editable_text_content_edit', {'id': text.id}) }}">edit</a>
+                        {{ include('editable_text_content/_delete_form.html.twig', {'editable_text_content': text}) }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Please select a page to view its content.</p>
+{% endif %}
+{% endblock %}

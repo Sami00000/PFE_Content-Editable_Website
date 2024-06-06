@@ -1,0 +1,24 @@
+{% extends 'sidebar.html.twig' %}
+{% block stylesheets %}
+    <link rel="stylesheet" href=" {{ asset('build/css/user-form.css') }}">
+{% endblock %}
+{% block title %}Register{% endblock %}
+
+{% block section %}
+    <div class="register-form-container">
+    <h1>Add User</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+
+        {{ form_row(registrationForm.username) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.roles) }}
+        <button type="submit" class="btn">Register</button>
+        <a href="{{path('app_user')}}" class="back">back to users</a>
+    {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}

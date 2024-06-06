@@ -1,0 +1,11 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}New EditableImageContent{% endblock %}
+
+{% block body %}
+    <h1>Create new EditableImageContent</h1>
+
+    {{ include('editable_image_content/_form.html.twig') }}
+
+    <a class="button" href="{{ path('app_editable_image_content_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,1295 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:wght@200&family=Rubik&display=swap');
+
+/*#root{
+  display: flex;
+  flex-direction: column;
+  
+}*/
+/* header ---- start ------- */
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  height: 80px;
+  background-color: black;
+}
+.website-logo{
+  width: 30px;
+  height: 30px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  border: 1px solid black;
+  height: 100%;
+}
+.navbar > ul{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 580px;
+  margin-left: 130px;
+  font-size: 17px;
+  height: 100%;
+}
+.navbar > ul > li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition-duration: 200ms;
+}
+.navbar > ul > li > a{
+  color: #fff;
+}
+.navbar > ul > li:hover {
+  border-bottom: 4px solid #FFB000;
+}
+.title{
+  font: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 130px;
+  color: #fff;
+
+}
+.social-media-container{
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-media > a{
+  margin-left: 10px;
+  font-size: 20px;
+  color: #fff;
+}
+.get-started-btn{
+  background-color: #1c1b19;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 100px;
+  margin-left: 15px;
+  border-radius: 7px;
+  transition-duration: 600ms;
+}
+.get-started-btn:hover{
+  background-color: #FFB000;
+}
+/* header ---- end ------- */
+.home-container{
+  width: 90%;
+  padding-top: 55px;
+  padding-left: 65px;
+}
+/* quote ---------- start ------ */
+.quote{
+  height: 500px;
+  color: black;
+  font-size: 43px;
+  font-family: "Montserrat", sans-serif;
+}
+.quote-text > span{
+  color: #FFB000;;
+}
+.quote > p{
+  font-size: 17px;
+  width: 400px;
+  margin-top: 20px;
+  margin-left: 30%;
+}
+/* quote -------- end ------------ */
+
+/* services ------- start ------- */
+.services-container{
+  width: 100%;
+}
+.services{
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.service{
+  width: 22%;
+  height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.service-img{
+  width: 280px;
+  height: 300px;
+  margin-top: 20px;
+  border-radius: 7px;
+}
+.service > div{
+  width: 280px;
+}
+.about-service{
+  height: 250px;
+  margin-top: 80px;
+}
+.about-service > p{
+  margin-top: 30px;
+  line-height: 25px;
+}
+.service-title{
+  margin-top: 25px;
+}
+/* services ------- end ------- */
+
+/* reviews ------- start ------- */
+.reviews-container{
+  margin-top: 100px;
+  width: 100%;
+}
+.reviews{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.review{
+  background-color: black;/*#cbbe0d*/
+  border-radius: 15px;
+  height: 350px;
+  width: 400px;
+  padding-left: 10px;
+  
+}
+.user-name , .review-text{
+  color:#fff;
+  
+}
+.user-name{
+  font-size: 28px;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+.review-text{
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+  line-height: 30px;
+}
+.review-rate{
+  margin-top: 30px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 250px;
+}
+/* reviews ------- end  ------- */
+
+/* footer ---------- start --------*/
+
+footer{
+  margin-top: 50px;
+  width: 100%;
+  height: 350px;
+  background-color: black;
+}
+/* footer ---------- end ------------ */
+
+/* contact ---------- start ---------- */
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 950px;
+}
+.form-section{
+  height: 950px;
+  display: flex;
+}
+.contact-title{
+  width: 45%;
+}
+.form-container{
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+.contact-title  > h1{
+  font-size: 55px;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-left: 30px;
+}
+.contact-text{
+  width: 700px;
+  height: 250px;
+  font-size: 17px;
+  line-height: 30px;
+  margin-top: 60px;
+  margin-left: 30px;
+}
+.contact-us-form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  width: 700px;
+}
+.firstandlast{
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
+.first-name , .last-name{
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+.first-name > label , .last-name > label , .email > label , .message > label , .message > textarea{
+  margin-top: 30px;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 16px
+}
+.first-name > label > span , .last-name > label > span , .email > label > span , .message > label > span{
+  font-size: 14px;
+  color: #9e9c98 ;
+}
+.first-name > input , .last-name > input{
+  width: 320px;
+  margin-top: 15px;
+  height: 50px;
+  border-radius:7px ;
+  padding-left: 15px;
+  font-size: 16px;
+  outline: none;
+  border: .5px solid #d9d6d0;
+}
+.email , .message{
+  display: flex;
+  flex-direction: column;
+}
+.email > input{
+  width: 670px;
+  margin-top: 15px;
+  height: 50px;
+  border-radius:7px ;
+  padding-left: 15px;
+  font-size: 16px;
+  outline: none;
+  border: .5px solid #d9d6d0;
+}
+.message > textarea{
+  padding-left: 15px;
+  padding-top: 15px;
+  outline: none;
+  border: .5px solid #d9d6d0;
+  border-radius:7px ;
+}
+.submit-btn-container{
+  width: 670px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit-btn{
+  background-color: black;
+  color: #fff;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.submit-btn:hover{
+  background-color: #212120;
+}
+.location-img{
+  width: 570px;
+  height: 570px;
+  margin-left: 50px;
+  margin-top: 40px;
+  border-radius: 10px;
+}
+/*  FAQs **************** start **************** */
+.questions-section{
+  margin-top: 55px;
+}
+.questions-section > h1{
+  margin-top: 25px;
+  margin-left: 30px;
+}
+.questions-container{
+  margin-top: 30px;
+}
+.question-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #262626;
+  margin-top: 3px;
+  color: #fff;
+  cursor: pointer;
+}
+.question-title:hover{
+  background-color: #3c3c3c;
+}
+.question-title > p{
+  margin-left: 25px;
+  font-size: 20px;
+}
+.mark-icon{
+  margin-right: 25px;
+  font-size: 27px;
+}
+.answer{
+  background-color: #3c3c3c;
+  margin-top: 1px;
+  padding: 20px ;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
+}
+.hidden-answer{
+  display: none;
+}
+.rotated{
+  transform: rotate(45deg);
+}
+.ask-us{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ask-us > div {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  justify-content: space-between;
+  width: 350px;
+  font-size: 20px;
+}
+.ask-us > div > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background-color: #FFB000;
+  color: #fff;
+  height: 45px;
+  width: 140px;
+}
+/*  FAQs **************** end **************** */
+
+
+
+
+
+/* about ---------- start ---------- */
+
+.about-page-wrapper {
+  width: 100%;
+
+}
+
+/* about header ---------- start ---------- */
+
+.about-header {
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* about header small */
+.about-header-s {
+  height: 260px;
+  padding-top: 100px ;
+}
+
+/* about header box */
+.about-header-box {
+  height: 400px;
+  padding-top: 60px ; 
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+
+.header-text > span{
+  color: #FFB000;;
+}
+
+
+.about-header  > p{
+  font-size: 25px;
+  text-align: center ; 
+  padding-top: 20px ;
+}
+
+/* about header ---------- end ---------- */
+.about-flexbox {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding-top: 100px;
+  padding-left: 20px;
+  width: 88%;
+  margin: 0 auto; /* Center content */
+  align-items: center; /* Center items vertically */
+}
+
+.about-content {
+  flex: 1; /* Take up remaining space */
+  margin-right: 30px; /* Add spacing between content and image */
+}
+
+.about-content > p{
+  font-size:larger ;
+font-weight:400 ;
+line-height: var(--cl-text-line-height, 1.75);
+}
+
+.about-content > h2 {
+  font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.38;
+    padding-bottom: 10px;
+}
+
+.about-content > h1 {
+  font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.38;
+    padding-bottom: 10px;
+}
+
+.about-image-container {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  margin-right: 30px; /* Add spacing between content and image */
+  
+}
+
+.about-image-container > img {
+  width: 550px;
+}
+
+
+/* about team overivew ---------- start ---------- */
+.about-text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.about-responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 92%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.about-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: block;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.about-responsive-cell-block {
+  min-height: 75px;
+}
+
+.about-container {
+  max-width: 1380px;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-bottom: 80px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+
+.about-team-head-text {
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 70px;
+  margin-left: 0px;
+}
+
+.about-name {
+  font-size: 18px;
+  margin-top: 11px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-weight: 700;
+}
+
+.about-position {
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.about-team-card-container {
+  width: 263px;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.about-teamcard-container {
+  justify-content: space-evenly;
+}
+
+.about-team-img-wrapper {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.about-team-img {
+  max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  .about-team-card-container {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .about-team-img {
+    width: 100%;
+  }
+}
+
+
+/* about team overivew ---------- end ---------- */
+.about-page-separator {
+  width: 80%;
+  height: 2px;
+  background-color: #ccc; /* Adjust color as needed */
+ margin: 150px auto 120px; /* Adjust margin-top as needed */
+  
+}
+/* about ---------- end ---------- */
+
+
+
+
+/* homepage header ---------- start ---------- */
+
+.homepage-header {
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* homepage header small */
+.homepage-header-s {
+  height: 350px;
+  padding-top: 100px ;
+}
+
+/* homepage header box */
+.homepage-header-box {
+  height: 400px;
+  padding-top: 60px ; 
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+
+.header-text > span{
+  color: #FFB000;;
+}
+
+
+.homepage-header  > p{
+  font-size: 25px;
+  text-align: center ; 
+  padding-top: 20px ;
+}
+
+/* about header ---------- end ---------- */
+.about-flexbox {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding-top: 100px;
+  padding-left: 20px;
+  width: 88%;
+  margin: 0 auto; /* Center content */
+  align-items: center; /* Center items vertically */
+}
+
+.about-content {
+  flex: 1; /* Take up remaining space */
+  margin-right: 30px; /* Add spacing between content and image */
+}
+
+.about-content > p{
+  font-size:larger ;
+font-weight:400 ;
+line-height: var(--cl-text-line-height, 1.75);
+}
+
+.about-content > h2 {
+  font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.38;
+    padding-bottom: 10px;
+}
+
+.about-content > h1 {
+  font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.38;
+    padding-bottom: 10px;
+}
+
+.about-image-container {
+  flex-shrink: 0; /* Prevent image from shrinking */
+  margin-right: 30px; /* Add spacing between content and image */
+  
+}
+
+.about-image-container > img {
+  width: 550px;
+}
+
+
+/* about team overivew ---------- start ---------- */
+.about-text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.about-responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 92%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.about-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: block;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.about-responsive-cell-block {
+  min-height: 75px;
+}
+
+.about-container {
+  max-width: 1380px;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-bottom: 80px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+
+.about-team-head-text {
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 70px;
+  margin-left: 0px;
+}
+
+.about-name {
+  font-size: 18px;
+  margin-top: 11px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-weight: 700;
+}
+
+.about-position {
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.about-team-card-container {
+  width: 263px;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.about-teamcard-container {
+  justify-content: space-evenly;
+}
+
+.about-team-img-wrapper {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.about-team-img {
+  max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  .about-team-card-container {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .about-team-img {
+    width: 100%;
+  }
+}
+
+
+/* homepage team overivew ---------- end ---------- */
+.about-page-separator {
+  width: 80%;
+  height: 2px;
+  background-color: #ccc; /* Adjust color as needed */
+ margin: 150px auto 120px; /* Adjust margin-top as needed */
+  
+}
+/* homepage ---------- end ---------- */
+
+
+
+
+/* photography page ---------- start ---------- */
+
+.photography-page-wrapper {
+  width: 100%;
+
+}
+
+/* about header ---------- start ---------- */
+
+.photography-header {
+ 
+ display:flex ;
+/*
+  background: rgb(255,215,0);
+  background: radial-gradient(circle, rgba(255,215,0,1) 0%, rgba(0,0,0,1) 100%);
+  
+  background: rgb(255,221,37);
+background: radial-gradient(circle, rgba(255,221,37,1) 0%, rgba(186,161,22,1) 74%);*/
+
+background: rgb(255,221,37);
+background: radial-gradient(circle, rgba(255,221,37,1) 0%, rgba(186,161,22,1) 51%);
+  color: white;
+  text-align: center; 
+}
+
+/* photography header small */
+.photography-header-s {
+  height: 400px;
+  padding-top: 100px ;
+}
+
+/* about header box */
+.photography-header-column {
+  flex: 1; /* Make both columns take up equal width */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  overflow: hidden; /* Prevent content from overflowing */
+  width: 50%;
+}
+
+.photography-header-column >h1 {
+    /*text style*/
+   
+    
+    font-size: 32px;
+    font-family: "Montserrat", sans-serif;
+    /*text style*/
+}
+
+.photography-header-column > p{
+  font-size: 25px;
+  text-align: center ; 
+  padding-top: 20px ;
+}
+
+
+.header-text > span{
+  color: #FFB000;;
+}
+
+
+
+ 
+
+
+/* photography header ---------- end ---------- */
+
+/* photography slideshow componenet ---------- start ---------- */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}       
+
+.slideshow img {
+  width: 300px;
+  object-fit: cover;
+  border-radius: 30%; /* Make the border-radius 50% to create an oval shape */
+}
+
+
+/* photography slideshow componenet ---------- end ---------- */
+
+/* photography products overivew ---------- start ----------   */
+/*
+.photography-text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.photography-responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 92%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.photography-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: block;
+  box-sizing: border-box;
+}
+
+.photography-responsive-cell-block {
+  min-height: 75px;
+}
+
+.photography-container {
+  max-width: 1380px;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-bottom: 80px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+  box-sizing: border-box; 
+}
+
+
+.photography-products-overivew-head-text {
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 70px;
+  margin-left: 0px;
+}
+
+.photography-name {
+  font-size: 18px;
+  margin-top: 11px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-weight: 700;
+}
+
+.photography-position {
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.photography-products-overivew-card-container {
+  width: 263px;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.photography-products-overivewcard-container {
+  justify-content: space-evenly;
+}
+
+.photography-products-overivew-img-wrapper {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.photography-products-overivew-img {
+  max-width: 100%;
+}
+
+@media (max-width: 500px) {
+  .photography-products-overivew-card-container {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .photography-products-overivew-img {
+    width: 100%;
+  }
+}
+
+
+/* photography products overivew ---------- end ---------- */
+
+
+
+/* photography ---------- end ---------- */
+
+.photography-container{
+  height: 100%;
+}
+.photography-header{
+  height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(228, 226, 226);
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.photography-header-text > h1{
+  font-size: 50px;
+  line-height: 80px;
+  width: 75%;
+  margin-left: 80px;
+}
+.photography-header-text > p{
+  margin-left: 80px;
+  margin-top: 20px;
+  font-size: 25px;
+}
+.photography-header > img{
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  margin-right: 150px;
+}
+.photography-body{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.photography-geners{
+  margin-left: 80px;
+}
+.photography-geners > div{
+  width: 630px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.photography-geners > div > img{
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+}
+.photography-form-container{
+  width: 700px;
+  height: 800px;
+  margin-right: 150px;
+}
+.photography-form{
+  margin-top: 25px;
+  width: 100%;
+}
+.photography-form > div{
+  width: 100%;
+}
+.photography-form > .fullname , .photography-form > .date{
+  display: flex;
+  flex-direction: row;
+}
+.photography-form > .date > div{
+  display: flex;
+  flex-direction: column;
+}
+.photography-form > div{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.photography-form > .fullname > div > label , .photography-form > div > label{
+  font-size: 16px;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+.photography-form > .fullname > div > input , 
+.photography-form > .date > div > input,
+.photography-form > div > input ,
+.photography-form > div > select 
+{
+  margin-top: 15px;
+  height: 50px;
+  border-radius:7px ;
+  padding-left: 15px;
+  font-size: 16px;
+  outline: none;
+  border: .5px solid #d9d6d0;
+}
+.photography-form > div > input , .photography-form > div > select {
+  width: 670px;
+}
+.photography-form > .fullname > div > input , 
+.photography-form > .date > div > input{
+  width: 320px;
+}
+.photography-form > .submit{
+  width: 670px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.photography-form > .submit > button{
+  background-color: black;
+  color: #fff;
+  border-radius: 10px;
+  width: 250px;
+  height: 50px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.photography-form > .submit > button:hover{
+  background-color: #212120;
+}
+
+/*menue dropdown list ---- start ------- */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  padding: 0px; /* Adjust padding to make submenu items closer */
+  list-style: none;
+}
+
+.dropdown-content li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content a {
+  font-weight:bolder;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 8px 16px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Add this CSS to change submenu item separators color on hover 
+.dropdown-content li:hover + li {
+  border-top: 2px solid #FFB000;
+}
+*/
+
+/*menue dropdown list ---- end ------- */
+
+/* digital Marketing ---------- start ----------------- */
+.digital-marketing-container{
+  height: 100%;
+  width: 100%;
+}
+.digital-marketing-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 60px;
+  height: 350px;
+}
+.digital-marketing-header > div > h1{
+  font-size: 50px;
+  width: 600px;
+  margin-left: 25px;
+  
+}
+.digital-marketing-header > div > p{
+  font-size: 25px;
+  width: 600px;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+.digital-marketing-header > img{
+  border-radius: 25px;
+  width: 400px;
+  height: 400px;
+}
+.digital-marketing-intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  height: 600px;
+  background-color: black;
+}
+.digital-marketing-intro > p{
+  width: 900px;
+  font-size: 20px;
+  line-height: 35px;
+  margin-top: 35px;
+  color: #fff;
+}
+.digital-marketing-intro > h1{
+  color: #fff;
+}
+.digital-marketing-section {
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.digital-marketing-section > div > p , 
+.digital-marketing-section > div > h1{
+  width: 650px;
+}
+.digital-marketing-section > div > h1 {
+  font-size: 40px;
+}
+.digital-marketing-section > div > p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+.digital-marketing-section  > img{
+  width: 500px;
+  height: 500px;
+  border-radius: 15px;
+}
+.bg-black{
+  background-color: black;
+  color: #fff;
+}
+/* digital Marketing ---------- end ----------------- */

@@ -1,0 +1,27 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/css/users.css') }}">
+{% endblock %}
+{% block section %}
+ {% include '_sidebar.html.twig' %}
+    <div class="container">
+        <a href="{{ path('app_register') }}" class="add-user">Add New User</a>
+        {% for user in users %}
+        <div class="user-container">
+            <div class="user-infos">
+                <div>
+                    <span>User Name:</span>
+                    <p>{{ user.getUsername() }}</p>
+                </div>
+                <div>
+                    <span>Role:</span>
+                    <p>{{ user.getRoles()[0] }}</p>
+                </div>
+            </div>
+            <div class="user-actions">
+                <a href="{{ path('app_user_delete', { id: user.getId() }) }}" class="delete-user">Delete</a>
+                <a href="" class="edit-user">Edit</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

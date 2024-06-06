@@ -1,0 +1,25 @@
+{% include '_sidebar.html.twig' %}
+{% block stylesheets %}
+    <link  href="{{asset('build/css/frequent_question.css')}}" rel="stylesheet">
+{% endblock %}
+{% block section %}
+    <a href="{{path('app_frequent_question.create')}}" class="create_faq">create FAQ</a>
+{% for frequentQuestion in frequentQuestions %}
+    <div class="frequent_question">
+        <div class="frequent_question_text">
+            <span>Question : </span>
+            <p>{{frequentQuestion.getQuestionText()}}</p>
+        </div>
+        {% if frequentQuestion.getQuestionRespond() != null %}
+        <div class="frequent_question_respond">
+            <span>Respond :</span>
+            <p>{{ frequentQuestion.getQuestionRespond()}}</p>
+        </div>
+        {% endif %}
+        <div class="frequent_question_actions">
+            <a href="{{ path('app_frequent_question.delete' , {id : frequentQuestion.getId()}) }}" class="delete_btn">delete</a>
+            <a href="{{ path('app_frequent_question.update' , {id : frequentQuestion.getId()}) }}" class="update_btn">update</a>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

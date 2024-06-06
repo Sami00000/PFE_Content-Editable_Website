@@ -1,0 +1,42 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}EditableTextContent{% endblock %}
+
+{% block body %}
+    <h1>EditableTextContent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ editable_text_content.id }}</td>
+            </tr>
+            <tr>
+                <th>TextContent</th>
+                <td>{{ editable_text_content.textContent }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                <td>{{ editable_text_content.tag }}</td>
+            </tr>
+            <tr>
+                <th>Page</th>
+                <td>{{ editable_text_content.page }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ editable_text_content.createdAt ? editable_text_content.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ editable_text_content.updatedAt ? editable_text_content.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="button" href="{{ path('app_editable_text_content_index') }}">back to list</a>
+
+    <a class="button" href="{{ path('app_editable_text_content_edit', {'id': editable_text_content.id}) }}">edit</a>
+
+    {{ include('editable_text_content/_delete_form.html.twig') }}
+{% endblock %}

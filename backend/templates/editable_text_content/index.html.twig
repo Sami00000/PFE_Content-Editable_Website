@@ -1,0 +1,54 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}EditableTextContent index{% endblock %}
+
+{% block body %}
+    <h1>EditableTextContent index</h1>
+
+    <form method="get" action="{{ path('app_editable_text_content_index') }}">
+        <input type="text" name="search" value="{{ search }}" placeholder="Search...">
+        <select name="page_filter" onchange="this.form.submit()">
+            <option value="">All Pages</option>
+            {% for page in distinct_pages %}
+                <option value="{{ page.page }}" {% if page_filter == page.page %}selected{% endif %}>{{ page.page }}</option>
+            {% endfor %}
+        </select>
+        <button class="button">Search</button>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th><a href="{{ path('app_editable_text_content_index', { sort: 'id', direction: direction == 'asc' ? 'desc' : 'asc', search: search, page_filter: page_filter }) }}">Id</a></th>
+                <th><a href="{{ path('app_editable_text_content_index', { sort: 'textContent', direction: direction == 'asc' ? 'desc' : 'asc', search: search, page_filter: page_filter }) }}">TextContent</a></th>
+                <th><a href="{{ path('app_editable_text_content_index', { sort: 'tag', direction: direction == 'asc' ? 'desc' : 'asc', search: search, page_filter: page_filter }) }}">Tag</a></th>
+                <th><a href="{{ path('app_editable_text_content_index', { sort: 'page', direction: direction == 'asc' ? 'desc' : 'asc', search: search, page_filter: page_filter }) }}">Page</a></th>
+                <th><a href="{{ path('app_editable_text_content_index', { sort: 'createdAt', direction: direction == 'asc' ? 'desc' : 'asc', search: search, page_filter: page_filter }) }}">CreatedAt</a></th>
+                <th><a href="{{ path('app_editable_text_content_index', { sort: 'updatedAt', direction: direction == 'asc' ? 'desc' : 'asc', search: search, page_filter: page_filter }) }}">UpdatedAt</a></th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for editable_text_content in editable_text_contents %}
+            <tr>
+                <td>{{ editable_text_content.id }}</td>
+                <td>{{ editable_text_content.textContent }}</td>
+                <td>{{ editable_text_content.tag }}</td>
+                <td>{{ editable_text_content.page }}</td>
+                <td>{{ editable_text_content.createdAt ? editable_text_content.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ editable_text_content.updatedAt ? editable_text_content.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a class="button" href="{{ path('app_editable_text_content_show', {'id': editable_text_content.id}) }}">show</a>
+                    <a class="button" href="{{ path('app_editable_text_content_edit', {'id': editable_text_content.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ 
+    {# <a class="button" href="{{ path('app_editable_text_content_new') }}">Create new</a> #}
+{% endblock %}

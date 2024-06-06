@@ -1,0 +1,82 @@
+
+{% extends 'base.html.twig' %}
+
+
+
+
+ {% block stylesheets %}
+  <link rel="stylesheet" href="{{ asset('build/css/questions.css') }}">
+            {{ encore_entry_link_tags('app') }}
+            {% block sidebar_styles %}{% endblock %}
+        {% endblock %}
+
+
+{% block body %}
+    <div class="container">
+        {% include '_sidebar.html.twig' %}
+
+        <div class="outlet">
+            {% block section %}
+                {% for question in questions %}
+                    <div class="question-container">
+                        <div class="firstandlastname">
+                            <div class="firstname">
+                                <span>First Name </span>
+                                <div>
+                                    <p>{{ question.getSenderFirstname() }}</p>
+                                    <span class="copy-icon" title="Copy"><i class="fa-solid fa-copy"></i></span>
+                                </div>
+                            </div>
+                            <div class="lastname">
+                                <span>Last Name </span>
+                                <div>
+                                    <p>{{ question.getSenderLastname() }}</p>
+                                    <span class="copy-icon" title="Copy"><i class="fa-solid fa-copy"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="email">
+                            <span>Email</span>
+                            <div>
+                                <p>{{ question.getSenderEmail() }}</p>
+                                <span class="copy-icon" title="Copy"><i class="fa-solid fa-copy"></i></span>
+                            </div>
+                        </div>
+                        <div class="question-text">
+                           <span>Question </span>
+                        <div>
+                            <p>{{ question.getQuestionText() }}</p>
+                            <span class="copy-icon" title="Copy"><i class="fa-solid fa-copy"></i></span>
+                        </div>
+                    </div>
+                    <div class="question-actions">
+                        <div>
+                            <a href="{{ path('app_question.delete', { id: question.id }) }}" class="delete_question">Delete</a>
+                            <a href="{{ path('app_question.add_frequent', { id: question.id }) }}" class="add2frequent">Add to FAQs</a>
+                        </div>
+                        <button class="reply_btn">Reply</button>
+                    </div>
+                    <div class="respond-form hidden">
+                        <form action="{{ path('app_question.add_respond') }}" method="POST">
+                            <input type="hidden" name="id" value="{{ question.id }}">
+                            <div>
+                                <textarea id="respond_text" name="respond_text" placeholder="Reply..."></textarea>
+                            </div>
+                            <div class="submit_respond">
+                                <button type="submit">Submit</button>
+                                <span class="cancel_reply">Cancel</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <br><br>
+            {% endfor %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
+

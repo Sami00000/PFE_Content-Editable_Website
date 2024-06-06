@@ -1,0 +1,128 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+
+# config/routes.yaml
+
+
+# ----------------Routes for editable heading content--------------start
+
+
+# Route for listing all editable heading contents
+app_editable_heading_content_index:
+    path: /editable-heading-content
+    controller: App\Controller\EditableHeadingContentController::index
+    methods: GET
+
+# Route for showing a single editable heading content
+app_editable_heading_content_show:
+    path: /editable-heading-content/{id}
+    controller: App\Controller\EditableHeadingContentController::show
+    methods: GET
+
+# Route for creating a new editable heading content
+app_editable_heading_content_new:
+    path: /editable-heading-content/new
+    controller: App\Controller\EditableHeadingContentController::new
+    methods: GET|POST
+
+# Route for editing an existing editable heading content
+app_editable_heading_content_edit:
+    path: /editable-heading-content/{id}/edit
+    controller: App\Controller\EditableHeadingContentController::edit
+    methods: GET|POST
+
+# Route for deleting an existing editable heading content
+app_editable_heading_content_delete:
+    path: /editable-heading-content/{id}
+    controller: App\Controller\EditableHeadingContentController::delete
+    methods: DELETE
+
+
+# ----------------Routes for editable heading content--------------end
+
+
+
+
+
+# ----------------Routes for editable text content--------------start
+
+# Route for listing all editable text contents
+app_editable_text_content_index:
+    path: /editable-text-content
+    controller: App\Controller\EditableTextContentController::index
+    methods: GET
+
+# Route for showing a single editable text content
+app_editable_text_content_show:
+    path: /editable-text-content/{id}
+    controller: App\Controller\EditableTextContentController::show
+    methods: GET
+
+# Route for creating a new editable text content
+app_editable_text_content_new:
+    path: /editable-text-content/new
+    controller: App\Controller\EditableTextContentController::new
+    methods: GET|POST
+
+# Route for editing an existing editable text content
+app_editable_text_content_edit:
+    path: /editable-text-content/{id}/edit
+    controller: App\Controller\EditableTextContentController::edit
+    methods: GET|POST
+
+# Route for deleting an existing editable text content
+app_editable_text_content_delete:
+    path: /editable-text-content/{id}
+    controller: App\Controller\EditableTextContentController::delete
+    methods: DELETE
+
+    
+# ----------------Routes for editable text content--------------end
+
+
+
+
+
+
+# ----------------Routes for editable img content--------------start
+
+# Route for listing all editable image contents
+app_editable_image_content_index:
+    path: /editable-image-content
+    controller: App\Controller\EditableImageContentController::index
+    methods: GET
+
+# Route for showing a single editable image content
+app_editable_image_content_show:
+    path: /editable-image-content/{id}
+    controller: App\Controller\EditableImageContentController::show
+    methods: GET
+
+# Route for creating a new editable image content
+app_editable_image_content_new:
+    path: /editable-image-content/new
+    controller: App\Controller\EditableImageContentController::new
+    methods: GET|POST
+
+# Route for editing an existing editable image content
+app_editable_image_content_edit:
+    path: /editable-image-content/{id}/edit
+    controller: App\Controller\EditableImageContentController::edit
+    methods: GET|POST
+
+# Route for deleting an existing editable image content
+app_editable_image_content_delete:
+    path: /editable-image-content/{id}
+    controller: App\Controller\EditableImageContentController::delete
+    methods: DELETE
+
+
+# ----------------Routes for editable img content --------------end
+
+editable_page_content:
+    path: /editable-page-content
+    controller: App\Controller\EditablePageContentController::index

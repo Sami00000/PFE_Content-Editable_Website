@@ -1,0 +1,145 @@
+.frequent_question{
+    border: 1px solid black;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    border-radius: 7px;
+    background-color:  #ececec;;
+}
+.frequent_question_text > span , .frequent_question_respond > span {
+    font-size: 22px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.frequent_question_text > p , .frequent_question_respond > p{
+    margin-top: 15px;
+    border: .5px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+    width: 850px;
+    margin-left: 15px;
+    background-color: #fff;
+}
+.frequent_question_respond > p{
+    min-height: auto;
+    word-wrap: break-word;
+}
+.frequent_question_actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    margin-top: 25px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+.frequent_question_actions > .delete_btn , .frequent_question_actions > .update_btn{
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.frequent_question_actions > .delete_btn{
+    background-color: red;
+}
+.frequent_question_actions > .update_btn{
+    background-color:#279EFF ;
+}
+.create_faq{
+    width: 900px;
+    min-height: 50px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #54B435;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+.form-container{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container > form{
+    width: 550px;
+    height: auto;
+    background-color: #ececec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7px;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+.form-group > label{
+    font-size: 20px;
+    margin-top: 15px;
+}
+.form-group > input , .form-group > textarea{
+    height: 40px;
+    border-radius: 7px;
+    padding-left: 10px;
+    margin-top: 15px;
+    font-size: 18px;
+    width: 500px;
+}
+.form_question_text  , .form_question_respond{
+    word-wrap: break-word;
+}
+.form_question_respond > textarea{
+    min-height: 150px;
+    border: 1px solid red;
+}
+
+.update_actions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 350px;
+    margin-top: 20px;
+}
+.update_actions > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    width: 170px;
+    height: 50px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 18px;
+}
+.update_actions > button[type="submit"]{
+    background-color: #54B435;
+}
+.update_actions > button[type="reset"]{
+    background-color:red ;
+}
+.back2faqs{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.back2faqs > a{
+    width: 350px;
+    height: 50px;
+    border-radius: 7px;
+    color: #fff;
+    background-color:#279EFF ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

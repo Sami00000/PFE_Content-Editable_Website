@@ -1,0 +1,42 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}EditableImageContent{% endblock %}
+
+{% block body %}
+    <h1>EditableImageContent</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ editable_image_content.id }}</td>
+            </tr>
+            <tr>
+                <th>SrcContent</th>
+                <td>{{ editable_image_content.srcContent }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                <td>{{ editable_image_content.tag }}</td>
+            </tr>
+            <tr>
+                <th>Page</th>
+                <td>{{ editable_image_content.page }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ editable_image_content.createdAt ? editable_image_content.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ editable_image_content.updatedAt ? editable_image_content.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="button" href="{{ path('app_editable_image_content_index') }}">back to list</a>
+
+    <a class="button" href="{{ path('app_editable_image_content_edit', {'id': editable_image_content.id}) }}">edit</a>
+
+    {{ include('editable_image_content/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}New EditableTextContent{% endblock %}
+
+{% block body %}
+    <h1>Create new EditableTextContent</h1>
+
+    {{ include('editable_text_content/_form.html.twig') }}
+
+    <a class="button" href="{{ path('app_editable_text_content_index') }}">back to list</a>
+{% endblock %}

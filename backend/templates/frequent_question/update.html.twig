@@ -1,0 +1,27 @@
+{% include '_sidebar.html.twig' %}
+{% block stylesheets %}
+    <link  href="{{asset('build/css/frequent_question.css')}}" rel="stylesheet">
+{% endblock %}
+{% block section %}
+<div class="form-container">
+    {{form_start(form)}}
+    <div class="form-group">
+		{{ form_label(form.question_text)}}
+		{{form_widget(form.question_text)}}
+	</div>
+	<div class="form-group">
+	    {{ form_label(form.question_respond)}}
+	    {{form_widget(form.question_respond)}}
+	</div>
+	<div class="form-group">
+		{{ form_label(form.frequency)}}
+	    {{form_widget(form.frequency)}}
+	</div>
+    <div class="update_actions">
+        <button class="send" type="submit">update</button>
+        <button  type="reset">reset</button>
+    </div>
+	<div class="back2faqs"><a href="{{path('app_frequent_question.index')}}">back to FAQs</a></div>
+{{form_end(form)}}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'crud_base.html.twig' %}
+
+{% block title %}Edit EditableHeadingContent{% endblock %}
+
+{% block body %}
+    <h1>Edit EditableHeadingContent</h1>
+
+    {{ include('editable_heading_content/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="button" href="{{ path('app_editable_heading_content_index') }}">back to list</a>
+
+    {{ include('editable_heading_content/_delete_form.html.twig') }}
+{% endblock %}

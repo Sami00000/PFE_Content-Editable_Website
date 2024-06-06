@@ -1,0 +1,101 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Background color to differentiate the centered content */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 6000px; /* Adjust the max-width as needed */
+    padding: 20px;
+    background-color: #ececec;
+    border-radius: 15px;
+}
+
+.add-user {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #54B435;
+    height: 60px;
+    margin-top: 30px;
+    border-radius: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.user-container {
+    background-color: #ececec;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.user-infos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-infos > div > span {
+    font-size: 20px;
+    text-align: center;
+    display: block;
+}
+
+.user-infos > div > p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.user-infos > div {
+    margin-top: 15px;
+}
+
+.user-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.edit-user, .delete-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+    width: 180px;
+}
+
+.delete-user {
+    background-color: red;
+}
+
+.edit-user {
+    background-color: #279EFF;
+}
+
+form {
+    background-color: red;
+}
