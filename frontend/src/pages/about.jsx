@@ -7,7 +7,7 @@ function About() {
     useTextContent();
     useImageContent();
     useHeadingContent();
-    const simpleCookie = useCookie('simple_cookie');
+
     
     return (
         <div className="about-page-wrapper">
@@ -19,6 +19,7 @@ function About() {
                 </h1>
                 <p data-page="about" data-tag="header" data-id=""></p>
                 <p data-page="about" data-tag="arrow" data-id=""></p>
+                
             </div>
             {/* about-Page-Header end */}
           

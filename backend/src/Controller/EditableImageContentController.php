@@ -44,6 +44,7 @@ class EditableImageContentController extends AbstractController
         $imageContents = $repository->findAll();
         $data = array_map(function (EditableImageContent $content) {
             return [
+                'id' => $content->getId(),
                 'tag' => $content->getTag(),
                 'page' => $content->getPage(),
                 'srcContent' => $content->getSrcContent(),

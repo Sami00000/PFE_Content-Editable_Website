@@ -1,20 +1,25 @@
 import { useEffect } from 'react';
+import useEditIcons from './useEditIcons';
+import useCookie from './useCookie';
 
 const fetchAndSetTextData = async () => {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/get-text-content');
         const data = await response.json();
 
+        const updatedElements = [];
         data.forEach(item => {
             const paragraphs = document.querySelectorAll(`p[data-page="${item.page}"][data-tag="${item.tag}"]`);
             paragraphs.forEach(p => {
                 p.textContent = item.textContent;
-                p.setAttribute('data-id', item.id);  // Set the data-id attribute
-                //console.log(`Updated paragraph with tag: ${item.tag}, page: ${item.page}, id: ${item.id}`);  // Log the update
+                p.setAttribute('data-id', item.id);
+                updatedElements.push(p);
             });
         });
+        return updatedElements;
     } catch (error) {
         console.error('Error:', error);
+        return [];
     }
 };
 
@@ -48,7 +53,6 @@ const observeNewParagraphs = (mutationList) => {
         if (mutation.type === 'childList') {
             mutation.addedNodes.forEach(node => {
                 if (node.tagName === 'P' && node.hasAttribute('data-page') && node.hasAttribute('data-tag')) {
-                    // Send the new paragraph data to the database
                     extractAndSendTextData();
                 }
             });
@@ -57,22 +61,45 @@ const observeNewParagraphs = (mutationList) => {
 };
 
 const useTextContent = () => {
+    const { hasCookie } = useCookie('simple_cookie');
+    
     useEffect(() => {
+        let observer;
+
         const updateContent = async () => {
-            await fetchAndSetTextData();
+            const updatedElements = await fetchAndSetTextData();
 
-            // Create an observer instance linked to the callback function
-            const observer = new MutationObserver(observeNewParagraphs);
-
-            // Start observing the target node for configured mutations
+            observer = new MutationObserver(observeNewParagraphs);
             observer.observe(document.body, { childList: true, subtree: true });
 
-            // Send initial text data
             await extractAndSendTextData();
+
+            if (hasCookie) {
+                updatedElements.forEach(p => {
+                    const editIcon = document.createElement('span');
+                    editIcon.textContent = '✏️';
+                    editIcon.style.cursor = 'pointer';
+                    editIcon.onclick = () => {
+                        const id = p.getAttribute('data-id');
+                        if (id) {
+                            window.location.href = `http://127.0.0.1:8000/editable-text-content/${id}/edit`;
+                        }
+                    };
+                    p.appendChild(editIcon);
+                });
+            }
         };
 
         updateContent();
-    }, []);
+
+        return () => {
+            if (observer) {
+                observer.disconnect();
+            }
+        };
+    }, [hasCookie]);
+
+    useEditIcons(hasCookie);
 };
 
 export default useTextContent;
