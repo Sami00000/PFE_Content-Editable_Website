@@ -17,8 +17,8 @@ function About() {
                 </h1>
                 <h1 className="header-text" data-page="about" data-tag="testttt">
                 </h1>
-                <p data-page="about" data-tag="header"></p>
-                <p data-page="about" data-tag="arrow"></p>
+                <p data-page="about" data-tag="header" data-id=""></p>
+                <p data-page="about" data-tag="arrow" data-id=""></p>
             </div>
             {/* about-Page-Header end */}
           
@@ -26,7 +26,7 @@ function About() {
             <div className="about-flexbox">
                 <div className="about-content">
                     <h1 data-page="about" data-tag="about-us-header"></h1>
-                    <p data-page="about" data-tag="about-us"></p>
+                    <p data-page="about" data-tag="about-us" data-id="" ></p>
                 </div>
                 <div className="about-image-container">
                     <img data-page="about" data-tag="about-us-img" src="" alt="Description" />

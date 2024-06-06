@@ -44,6 +44,7 @@ class EditableTextContentController extends AbstractController
         $textContents = $repository->findAll();
         $data = array_map(function (EditableTextContent $content) {
             return [
+                'id' => $content->getId(),
                 'tag' => $content->getTag(),
                 'page' => $content->getPage(),
                 'textContent' => $content->getTextContent(),

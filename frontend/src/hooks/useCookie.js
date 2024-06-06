@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useCookie = (cookieName) => {
     const [cookieValue, setCookieValue] = useState(null);
+    const [hasCookie, setHasCookie] = useState(false);
 
     useEffect(() => {
         const getCookieValue = (name) => {
@@ -15,9 +16,12 @@ const useCookie = (cookieName) => {
         const value = getCookieValue(cookieName);
         console.log("Cookie Value:", value); // Log the specific cookie value
         setCookieValue(value);
+        setHasCookie(!!value);
     }, [cookieName]);
-
-    return cookieValue;
+    
+    console.log("Cookie boolean:", hasCookie); 
+    return { cookieValue, hasCookie };
+    
 };
 
 export default useCookie;

@@ -9,6 +9,8 @@ const fetchAndSetTextData = async () => {
             const paragraphs = document.querySelectorAll(`p[data-page="${item.page}"][data-tag="${item.tag}"]`);
             paragraphs.forEach(p => {
                 p.textContent = item.textContent;
+                p.setAttribute('data-id', item.id);  // Set the data-id attribute
+                //console.log(`Updated paragraph with tag: ${item.tag}, page: ${item.page}, id: ${item.id}`);  // Log the update
             });
         });
     } catch (error) {
@@ -19,6 +21,7 @@ const fetchAndSetTextData = async () => {
 const extractAndSendTextData = async () => {
     const paragraphs = document.querySelectorAll('p[data-page][data-tag]');
     const data = Array.from(paragraphs).map(p => ({
+        id: p.getAttribute('data-id') || null,
         tag: p.getAttribute('data-tag'),
         page: p.getAttribute('data-page'),
         textContent: p.textContent
