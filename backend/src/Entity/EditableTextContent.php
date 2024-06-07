@@ -17,7 +17,7 @@ class EditableTextContent
     #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: 'text', nullable: true)]
     private ?string $textContent = null;
 
     #[ORM\Column(length: 255)]
