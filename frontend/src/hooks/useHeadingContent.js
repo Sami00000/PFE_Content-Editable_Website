@@ -56,7 +56,7 @@ const observeNewHeadings = (mutationsList) => {
 
 const useHeadingContent = () => {
     const { hasCookie } = useCookie('simple_cookie');
-    
+
     useEffect(() => {
         let observer;
 
@@ -67,10 +67,6 @@ const useHeadingContent = () => {
             observer.observe(document.body, { childList: true, subtree: true });
 
             await extractAndSendHeadingData();
-
-            if (hasCookie) {
-                useEditIcons(hasCookie); // Ensure edit icons are added next to the elements
-            }
         };
 
         updateContent();
@@ -80,7 +76,7 @@ const useHeadingContent = () => {
                 observer.disconnect();
             }
         };
-    }, [hasCookie]);
+    }, []);
 
     useEditIcons(hasCookie);
 };

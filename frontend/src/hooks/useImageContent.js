@@ -66,10 +66,6 @@ const useImageContent = () => {
             observer.observe(document.body, { childList: true, subtree: true });
 
             await extractAndSendImageData();
-
-            if (hasCookie) {
-                useEditIcons(hasCookie); // Ensure edit icons are added next to the elements
-            }
         };
 
         updateContent();
@@ -79,8 +75,9 @@ const useImageContent = () => {
                 observer.disconnect();
             }
         };
-    }, [hasCookie]);
+    }, []);
 
+    // Ensure this hook is called only at the top level of the React component or custom hook
     useEditIcons(hasCookie);
 };
 
