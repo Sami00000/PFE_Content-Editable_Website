@@ -149,3 +149,83 @@ button.btn:hover {
     text-align: center;
 }
 
+.modern-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+.modern-form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.modern-form select,
+.modern-form .search-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-form select:focus,
+.modern-form .search-input:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.modern-form select option,
+.modern-form .search-input option {
+    padding: 10px;
+}
+
+.modern-form .search-input {
+    margin-bottom: 10px;
+}
+
+.modern-form .search-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modern-form .search-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .modern-form {
+        width: 95%;
+    }
+
+    .modern-form label,
+    .modern-form select,
+    .modern-form .search-input,
+    .modern-form .search-button {
+        font-size: 14px;
+    }
+}

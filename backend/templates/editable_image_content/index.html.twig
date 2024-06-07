@@ -7,16 +7,16 @@
 
 
     
-    <form method="get" action="{{ path('app_editable_image_content_index') }}">
-        <input type="text" name="search" value="{{ search }}" placeholder="Search...">
-        <select name="pageFilter" onchange="this.form.submit()">
-            <option value="">All Pages</option>
-            {% for page in distinctPages %}
-                <option value="{{ page.page }}" {% if pageFilter == page.page %}selected{% endif %}>{{ page.page }}</option>
-            {% endfor %}
-        </select>
-        <button class="button">Search</button>
-    </form>
+  <form class="modern-form" method="get" action="{{ path('app_editable_image_content_index') }}">
+    <input class="search-input" type="text" name="search" value="{{ search }}" placeholder="Search...">
+    <select class="page-filter" name="pageFilter" onchange="this.form.submit()">
+        <option value="">All Pages</option>
+        {% for page in distinctPages %}
+            <option value="{{ page.page }}" {% if pageFilter == page.page %}selected{% endif %}>{{ page.page }}</option>
+        {% endfor %}
+    </select>
+    <button class="button search-button">Search</button>
+</form>
 
     <table class="table">
         <thead>

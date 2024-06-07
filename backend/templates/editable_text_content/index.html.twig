@@ -5,15 +5,15 @@
 {% block body %}
     <h1>EditableTextContent index</h1>
 
-    <form method="get" action="{{ path('app_editable_text_content_index') }}">
-        <input type="text" name="search" value="{{ search }}" placeholder="Search...">
-        <select name="page_filter" onchange="this.form.submit()">
+    <form class="modern-form" method="get" action="{{ path('app_editable_text_content_index') }}">
+        <input class="search-input" type="text" name="search" value="{{ search }}" placeholder="Search...">
+        <select class="page-filter" name="page_filter" onchange="this.form.submit()">
             <option value="">All Pages</option>
             {% for page in distinct_pages %}
                 <option value="{{ page.page }}" {% if page_filter == page.page %}selected{% endif %}>{{ page.page }}</option>
             {% endfor %}
         </select>
-        <button class="button">Search</button>
+        <button class="button search-button" >Search</button>
     </form>
 
     <table class="table">

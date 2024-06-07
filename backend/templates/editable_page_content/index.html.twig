@@ -5,7 +5,7 @@
 {% block body %}
 <h1>Editable Page Content</h1>
 
-<form method="get" action="{{ path('editable_page_content') }}">
+<form class="modern-form" method="get" action="{{ path('editable_page_content') }}">
     <label for="page">Select Page:</label>
     <select name="page" id="page" onchange="this.form.submit()">
         <option value="">-- Select a Page --</option>
@@ -14,7 +14,6 @@
         {% endfor %}
     </select>
 </form>
-
 {% if selectedPage %}
     <h2>Content for Page: {{ selectedPage }}</h2>
 
