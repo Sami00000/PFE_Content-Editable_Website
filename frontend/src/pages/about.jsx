@@ -2,7 +2,7 @@ import React from 'react';
 import useTextContent from '../hooks/useTextContent';
 import useImageContent from '../hooks/useImageContent';
 import useHeadingContent from '../hooks/useHeadingContent';
-import useCookie from '../hooks/useCookie';
+
 function About() {
     useTextContent();
     useImageContent();
