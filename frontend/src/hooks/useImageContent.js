@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import useEditIcons from './useEditIcons';
+import useCookie from './useCookie';
 
 const fetchAndSetImageData = async () => {
     try {
@@ -9,6 +11,7 @@ const fetchAndSetImageData = async () => {
             const images = document.querySelectorAll(`img[data-page="${item.page}"][data-tag="${item.tag}"]`);
             images.forEach(img => {
                 img.src = item.srcContent;
+                img.setAttribute('data-id', item.id);
             });
         });
     } catch (error) {
@@ -19,6 +22,7 @@ const fetchAndSetImageData = async () => {
 const extractAndSendImageData = async () => {
     const images = document.querySelectorAll('img[data-page][data-tag]');
     const data = Array.from(images).map(img => ({
+        id: img.getAttribute('data-id') || null,
         tag: img.getAttribute('data-tag'),
         page: img.getAttribute('data-page'),
         srcContent: img.getAttribute('src')
@@ -45,7 +49,6 @@ const observeNewImages = (mutationList) => {
         if (mutation.type === 'childList') {
             mutation.addedNodes.forEach(node => {
                 if (node.tagName === 'IMG' && node.hasAttribute('data-page') && node.hasAttribute('data-tag')) {
-                    // Send the new image data to the database
                     extractAndSendImageData();
                 }
             });
@@ -54,22 +57,30 @@ const observeNewImages = (mutationList) => {
 };
 
 const useImageContent = () => {
+    const { hasCookie } = useCookie('simple_cookie');
+    
     useEffect(() => {
+        let observer;
+
         const updateContent = async () => {
             await fetchAndSetImageData();
 
-            // Create an observer instance linked to the callback function
-            const observer = new MutationObserver(observeNewImages);
-
-            // Start observing the target node for configured mutations
+            observer = new MutationObserver(observeNewImages);
             observer.observe(document.body, { childList: true, subtree: true });
 
-            // Send initial image data
             await extractAndSendImageData();
         };
 
         updateContent();
+
+        return () => {
+            if (observer) {
+                observer.disconnect();
+            }
+        };
     }, []);
+
+    useEditIcons(hasCookie);
 };
 
 export default useImageContent;

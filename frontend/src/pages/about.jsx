@@ -13,9 +13,9 @@ function About() {
         <div className="about-page-wrapper">
             {/* about-Page-Header start */}
             <div className="about-header about-header-s">
-                <h1 className="header-text" data-page="about" data-tag="header">
+                <h1 className="header-text" data-page="about" data-tag="header" data-id="">
                 </h1>
-                <h1 className="header-text" data-page="about" data-tag="testttt">
+                <h1 className="header-text" data-page="about" data-tag="testttt" data-id="">
                 </h1>
                 <p data-page="about" data-tag="header" data-id=""></p>
                 <p data-page="about" data-tag="arrow" data-id=""></p>
@@ -30,7 +30,7 @@ function About() {
                     <p data-page="about" data-tag="about-us" data-id="" ></p>
                 </div>
                 <div className="about-image-container">
-                    <img data-page="about" data-tag="about-us-img" src="" alt="Description" />
+                    <img data-page="about" data-tag="about-us-img" src="" alt="Description" data-id=""/>
                 </div>
             </div>
             {/* flexbox content end */}
@@ -38,7 +38,7 @@ function About() {
             {/* flexbox content start */}
             <div className="about-flexbox">
                 <div className="about-image-container">
-                    <img data-page="about" data-tag="mission-img" src="" alt="Description" />
+                    <img data-page="about" data-tag="mission-img" src="" alt="Description" data-id=""/>
                 </div>
                 <div className="about-content">
                     <h1 data-page="about" data-tag="mission-header"></h1>

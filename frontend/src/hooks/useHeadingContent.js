@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
+import useEditIcons from './useEditIcons';
+import useCookie from './useCookie';
 
-// Function to fetch data from the backend and update heading tags
 const fetchAndSetHeadingData = async () => {
     try {
         const response = await fetch('http://127.0.0.1:8000/api/get-heading-content');
@@ -10,6 +11,7 @@ const fetchAndSetHeadingData = async () => {
             const heading = document.querySelector(`${item.headerLevel}[data-page="${item.page}"][data-tag="${item.tag}"]`);
             if (heading) {
                 heading.textContent = item.textContent;
+                heading.setAttribute('data-id', item.id);
             }
         });
     } catch (error) {
@@ -17,7 +19,6 @@ const fetchAndSetHeadingData = async () => {
     }
 };
 
-// Function to extract data from heading tags and send to the backend
 const extractAndSendHeadingData = async () => {
     try {
         const headings = document.querySelectorAll('h1[data-page], h2[data-page], h3[data-page], h4[data-page], h5[data-page], h6[data-page]');
@@ -25,6 +26,7 @@ const extractAndSendHeadingData = async () => {
 
         headings.forEach(heading => {
             data.push({
+                id: heading.getAttribute('data-id') || null,
                 tag: heading.getAttribute('data-tag'),
                 page: heading.getAttribute('data-page'),
                 textContent: heading.textContent,
@@ -49,7 +51,6 @@ const extractAndSendHeadingData = async () => {
     }
 };
 
-// Function to observe new heading elements
 const observeNewHeadings = (mutationsList) => {
     mutationsList.forEach(async (mutation) => {
         if (mutation.type === 'childList') {
@@ -63,22 +64,30 @@ const observeNewHeadings = (mutationsList) => {
 };
 
 const useHeadingContent = () => {
+    const { hasCookie } = useCookie('simple_cookie');
+    
     useEffect(() => {
+        let observer;
+
         const updateContent = async () => {
             await fetchAndSetHeadingData();
 
-            // Create an observer instance linked to the callback function
-            const observer = new MutationObserver(observeNewHeadings);
-
-            // Start observing the target node for configured mutations
+            observer = new MutationObserver(observeNewHeadings);
             observer.observe(document.body, { childList: true, subtree: true });
 
-            // Send initial heading data
             await extractAndSendHeadingData();
         };
 
         updateContent();
+
+        return () => {
+            if (observer) {
+                observer.disconnect();
+            }
+        };
     }, []);
+
+    useEditIcons(hasCookie);
 };
 
 export default useHeadingContent;
