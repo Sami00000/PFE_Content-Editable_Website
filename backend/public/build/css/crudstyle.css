@@ -24,6 +24,7 @@ h1 {
 }
 
 .table {
+     
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
@@ -33,6 +34,9 @@ h1 {
     border: 1px solid #dee2e6;
     padding: 12px;
     text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
 }
 
 .table th {
