@@ -7,19 +7,15 @@ const fetchAndSetTextData = async () => {
         const response = await fetch('http://127.0.0.1:8000/api/get-text-content');
         const data = await response.json();
 
-        const updatedElements = [];
         data.forEach(item => {
             const paragraphs = document.querySelectorAll(`p[data-page="${item.page}"][data-tag="${item.tag}"]`);
             paragraphs.forEach(p => {
                 p.textContent = item.textContent;
                 p.setAttribute('data-id', item.id);
-                updatedElements.push(p);
             });
         });
-        return updatedElements;
     } catch (error) {
         console.error('Error:', error);
-        return [];
     }
 };
 
@@ -33,16 +29,13 @@ const extractAndSendTextData = async () => {
     }));
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/update-text-content', {
+        await fetch('http://127.0.0.1:8000/api/update-text-content', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         });
-
-        const result = await response.json();
-        console.log('Success:', result);
     } catch (error) {
         console.error('Error:', error);
     }
@@ -67,7 +60,7 @@ const useTextContent = () => {
         let observer;
 
         const updateContent = async () => {
-            const updatedElements = await fetchAndSetTextData();
+            await fetchAndSetTextData();
 
             observer = new MutationObserver(observeNewParagraphs);
             observer.observe(document.body, { childList: true, subtree: true });
@@ -75,18 +68,7 @@ const useTextContent = () => {
             await extractAndSendTextData();
 
             if (hasCookie) {
-                updatedElements.forEach(p => {
-                    const editIcon = document.createElement('span');
-                    editIcon.textContent = '✏️';
-                    editIcon.style.cursor = 'pointer';
-                    editIcon.onclick = () => {
-                        const id = p.getAttribute('data-id');
-                        if (id) {
-                            window.location.href = `http://127.0.0.1:8000/editable-text-content/${id}/edit`;
-                        }
-                    };
-                    p.appendChild(editIcon);
-                });
+                useEditIcons(hasCookie); // Ensure edit icons are added next to the elements
             }
         };
 

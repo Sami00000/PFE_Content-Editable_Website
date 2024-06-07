@@ -3,18 +3,27 @@ import { useEffect } from 'react';
 const useEditIcons = (hasCookie) => {
     useEffect(() => {
         if (hasCookie) {
-            // Function to create and append an edit icon to an element
+            // Function to create and insert an edit icon as a sibling next to the element
             const addEditIcon = (element, type) => {
+                // Check if the edit icon already exists next to the element
+                const nextSibling = element.nextSibling;
+                if (nextSibling && nextSibling.classList && nextSibling.classList.contains('edit-icon')) {
+                    return;
+                }
+
                 const editIcon = document.createElement('span');
                 editIcon.textContent = '✏️';
                 editIcon.style.cursor = 'pointer';
+                editIcon.classList.add('edit-icon'); // Adding a class for identification
                 editIcon.onclick = () => {
                     const id = element.getAttribute('data-id');
                     if (id) {
                         window.location.href = `http://127.0.0.1:8000/editable-${type}-content/${id}/edit`;
                     }
                 };
-                element.appendChild(editIcon);
+
+                // Insert the edit icon after the element
+                element.parentNode.insertBefore(editIcon, element.nextSibling);
             };
 
             // Add edit icons to paragraphs

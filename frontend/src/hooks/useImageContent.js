@@ -7,19 +7,15 @@ const fetchAndSetImageData = async () => {
         const response = await fetch('http://127.0.0.1:8000/api/get-image-content');
         const data = await response.json();
 
-        const updatedElements = [];
         data.forEach(item => {
             const images = document.querySelectorAll(`img[data-page="${item.page}"][data-tag="${item.tag}"]`);
             images.forEach(img => {
                 img.src = item.srcContent;
                 img.setAttribute('data-id', item.id);
-                updatedElements.push(img);
             });
         });
-        return updatedElements;
     } catch (error) {
         console.error('Error:', error);
-        return [];
     }
 };
 
@@ -33,16 +29,13 @@ const extractAndSendImageData = async () => {
     }));
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/update-image-content', {
+        await fetch('http://127.0.0.1:8000/api/update-image-content', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         });
-
-        const result = await response.json();
-        console.log('Success:', result);
     } catch (error) {
         console.error('Error:', error);
     }
@@ -67,7 +60,7 @@ const useImageContent = () => {
         let observer;
 
         const updateContent = async () => {
-            const updatedElements = await fetchAndSetImageData();
+            await fetchAndSetImageData();
 
             observer = new MutationObserver(observeNewImages);
             observer.observe(document.body, { childList: true, subtree: true });
@@ -75,18 +68,7 @@ const useImageContent = () => {
             await extractAndSendImageData();
 
             if (hasCookie) {
-                updatedElements.forEach(img => {
-                    const editIcon = document.createElement('span');
-                    editIcon.textContent = '✏️';
-                    editIcon.style.cursor = 'pointer';
-                    editIcon.onclick = () => {
-                        const id = img.getAttribute('data-id');
-                        if (id) {
-                            window.location.href = `http://127.0.0.1:8000/editable-image-content/${id}/edit`;
-                        }
-                    };
-                    img.parentNode.insertBefore(editIcon, img.nextSibling);
-                });
+                useEditIcons(hasCookie); // Ensure edit icons are added next to the elements
             }
         };
 
